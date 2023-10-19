@@ -88,12 +88,14 @@ function makeMove(event) {
             document.getElementById("turn").innerHTML = "Finished (Player 1 won)";
             p1Wins.innerHTML = parseInt(p1Wins.innerHTML) + 1;
             // alert("Player 1 won");
+            disableBoard();
             return;
         }
         if (checkWinner(player2)) {
             document.getElementById("turn").innerHTML = "Finished (Player 2 won)"
             p2Wins.innerHTML = parseInt(p2Wins.innerHTML) + 1;
             // alert("Player 2 won");
+            disableBoard();
             return;
         }
 
@@ -101,6 +103,7 @@ function makeMove(event) {
             document.getElementById("message").innerHTML = ""
             document.getElementById("turn").innerHTML = "Draw"
             alert("Draw");
+            disableBoard();
             return;
         }
         return true;
@@ -140,6 +143,13 @@ function checkSurrounded(cell) {
     return false;
 }
 
+function disableBoard() {
+    for (let i = 0; i < 9; i++) {
+        cells[i].draggable = false;
+        cells[i].removeEventListener('dragstart', drag);
+        cells[i].removeEventListener('click', makeMove);
+    }
+}
 
 //check if player has won
 function checkWinner(player) {

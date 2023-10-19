@@ -60,6 +60,7 @@ body > * {
     height: 90px;
     width: 90px;
     color: #4c94d7;
+    user-select: none ;
     /* color:#43dbba; */
     font-weight: bold;
 }
