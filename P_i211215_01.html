@@ -1,0 +1,53 @@
+<!-- FILEPATH: /C:/Users/Bored/Documents/WebLab/Lab06/P_i211215_01.html -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <h1>Tic Tac Toe</h1>
+    <div id="initialT">
+        <div class="message">
+            Initial Turns (P1): <span id="p1Turns">3</span>
+        </div>
+        <div class="cell" id="dragCell" draggable="true" ondragstart="drag(event)">X</div>
+        <div class="message">
+            Initial Turns (P2): <span id="p2Turns">3</span>
+        </div>
+    </div>
+    <div class="board">
+        <div class="cell" id="cell1" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
+        <div class="cell" id="cell2" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
+        <div class="cell" id="cell3" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
+        <div class="cell" id="cell4" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
+        <div class="cell" id="cell5" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
+        <div class="cell" id="cell6" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
+        <div class="cell" id="cell7" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
+        <div class="cell" id="cell8" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
+        <div class="cell" id="cell9" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
+    </div>
+
+    <div class="message" id="msg">
+        <div>
+            Turn: <span id="turn"></span>
+        </div>
+        <div>
+            P1 Wins: <span id="p1Wins">0</span>
+        </div>
+        <div>
+            P2 Wins: <span id="p2Wins">0</span>
+        </div>
+    </div>
+
+    <div class="replay">
+        <button class="replayBtn" onclick="replay()">Replay</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
